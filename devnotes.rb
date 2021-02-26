@@ -1,16 +1,16 @@
 class Devnotes < Formula
   desc "Everything you need to get started with Devnotes"
   homepage "https://github.com/edudepetris/notes-cli"
-  url "https://devnotes-cli.s3.us-east-2.amazonaws.com/notes-v0.0.5/notes-v0.0.5-darwin-x64.tar.gz"
-  sha256 "8631553b051507fc5fef883dc6b48d2d639f54e2558eda3d2689eb55611c78d4"
+  url "https://devnotes-cli.s3.us-east-2.amazonaws.com/devnotes-v0.0.5/devnotes-v0.0.5-darwin-x64.tar.gz"
+  sha256 "fe2dd4167b451d62f84a6badcba9541b2ee91c23667c3319aab8627abdfaa2ea"
 
   def install
-    inreplace "bin/notes", /^CLIENT_HOME=/, "export NOTES_OCLIF_CLIENT_HOME=#{lib/"client"}\nCLIENT_HOME="
+    inreplace "bin/devnotes", /^CLIENT_HOME=/, "export DEVNOTES_OCLIF_CLIENT_HOME=#{lib/"client"}\nCLIENT_HOME="
     libexec.install Dir["*"]
-    bin.install_symlink libexec/"bin/notes"
+    bin.install_symlink libexec/"bin/devnotes"
   end
 
   test do
-    system bin/"notes", "version"
+    system bin/"devnotes", "version"
   end
 end
