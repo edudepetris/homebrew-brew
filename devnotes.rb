@@ -1,8 +1,8 @@
 class Devnotes < Formula
   desc "Everything you need to get started with Devnotes"
   homepage "https://github.com/edudepetris/notes-cli"
-  url "https://devnotes-cli.s3.us-east-2.amazonaws.com/devnotes-v0.0.5/devnotes-v0.0.5-darwin-x64.tar.gz"
-  sha256 "fe2dd4167b451d62f84a6badcba9541b2ee91c23667c3319aab8627abdfaa2ea"
+  url "https://devnotes-cli.s3.us-east-2.amazonaws.com/devnotes-v0.0.6/devnotes-v0.0.6-darwin-x64.tar.gz"
+  sha256 "da6bd7b3f19a3270c9bba4bb501697eef11539893fa37d340bcdf2bdcaefefd2"
 
   def install
     inreplace "bin/devnotes", /^CLIENT_HOME=/, "export DEVNOTES_OCLIF_CLIENT_HOME=#{lib/"client"}\nCLIENT_HOME="
